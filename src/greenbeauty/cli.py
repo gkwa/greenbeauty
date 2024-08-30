@@ -1,5 +1,6 @@
 import argparse
 import logging
+import pathlib
 
 from . import logger
 from .anthropic_client import process_markdown_links
@@ -35,11 +36,12 @@ def process_markdown_file(input_file, output_file):
     with open(input_file, "r") as file:
         markdown_links = file.read()
     result = process_markdown_links(markdown_links)
-    with open(output_file, "w") as file:
+    output_path = pathlib.Path(output_file).resolve()
+    with open(output_path, "w") as file:
         for content_block in result:
             if content_block.type == "text":
                 file.write(content_block.text)
-    print(f"Response has been written to {output_file}")
+    print(f"Response has been written to {output_path}")
 
 
 def main():

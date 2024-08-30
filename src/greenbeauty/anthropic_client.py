@@ -1,8 +1,11 @@
+import logging
 import pathlib
 import re
 
 import anthropic
 import jinja2
+
+logger = logging.getLogger(__name__)
 
 
 def process_markdown_links(markdown_links):
@@ -28,6 +31,10 @@ def process_markdown_links(markdown_links):
         max_tokens=2000,
         temperature=0,
         messages=[{"role": "user", "content": [{"type": "text", "text": prompt}]}],
+    )
+
+    print(
+        f"Prompt tokens: {message.usage.input_tokens}, Completion tokens: {message.usage.output_tokens}, Total tokens: {message.usage.input_tokens + message.usage.output_tokens}"
     )
 
     return message.content
