@@ -25,7 +25,7 @@ def process_markdown_links(markdown_links):
 
     message = client.messages.create(
         model="claude-3-5-sonnet-20240620",
-        max_tokens=1000,
+        max_tokens=2000,
         temperature=0,
         messages=[{"role": "user", "content": [{"type": "text", "text": prompt}]}],
     )
