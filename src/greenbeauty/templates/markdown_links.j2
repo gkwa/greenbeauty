@@ -1,40 +1,35 @@
-You will be given a list of links in Markdown format. Your task is to organize
-these links into meaningful groups based on their content. Follow these steps
-carefully:
+You are an AI assistant tasked with organizing a collection of markdown links and groups into a well-structured markdown document. Your goal is to create meaningful groups that categorize similar subjects based on the link names and existing markdown provided.
 
-1. First, here is the list of Markdown links:
-<markdown_links>
-{{ markdown_links }}
-</markdown_links>
+You will be given a list of markdown links and potentially some pre-existing markdown groups in the following format:
 
-2. Analyze the content of each link. Identify specific domain topics that the
-links cover. Focus on the subject matter or themes of the content, not on
-platforms, media types, or generic categories.
+<markdown_links_and_groups>
+{{MARKDOWN_LINKS_AND_GROUPS}}
+</markdown_links_and_groups>
 
-3. Create second-level headers (##) for each identified topic. Make these
-headers as specific and relevant to the content as possible. For example, use
-topics like "Artificial Intelligence", "Climate Change", or "Modern Art" rather
-than generic categories like "Technology" or "Environment".
+Follow these steps to organize the content:
 
-4. Under each header, organize the relevant links as a bulleted list. Use the
-Markdown format (- [link text](URL)) for each link.
+1. Analyze the content of each link and any existing markdown groups. Identify specific domain topics that the links cover. Focus on the subject matter or themes of the content, not on platforms, media types, or generic categories.
 
-5. Do not create groups based on platforms (e.g., "YouTube links"), types of
-links (e.g., "Google searches"), or media types (e.g., "Television"). The medium
-in which the content is viewed is not important; focus on the content itself.
+2. Create second-level headers (##) for each identified topic. Make these headers as specific and relevant to the content as possible. For example, use topics like "Artificial Intelligence", "Climate Change", or "Modern Art" rather than generic categories like "Technology" or "Environment".
 
-6. Remove any duplicate links. Each unique link should appear only once in your
-organized list.
+3. Under each header, organize the relevant links as a bulleted list. Use the Markdown format (- [link text](URL)) for each link.
 
-7. Present your final organized list directly, without any explanation or
-commentary. Start with the first second-level header and continue until all
-links are categorized.
+4. Do not create groups based on platforms (e.g., "YouTube links"), types of links (e.g., "Google searches"), or media types (e.g., "Television"). The medium in which the content is viewed is not important; focus on the content itself.
 
-8. Lets keep the groups sorted alphabetically.
+5. Remove any duplicate links. Each unique link should appear only once in your organized list.
 
-9. Sometimes you will encounter Obsidian style links--links in this format [[name]].
-Please keep these links and organize as you would with the other links.  Don't discard these
-links please.
+6. For any pre-existing markdown groups (indicated by second-level headers with content underneath), incorporate them into your organization. You may:
+   - Keep the section as-is if it fits well with your overall organization
+   - Rename the section header if a more relevant name is appropriate
+   - Add new links to the section if they fit the topic
+   - Move content from one section to another if it makes more sense in the new context
+   Do not remove or ignore any content within these pre-existing sections.
+
+7. For Obsidian-style links (in the format `[[name]]`), treat them as you would other links. Include them in the appropriate categories based on their content.
+
+8. Keep the groups sorted alphabetically by their headers.
+
+9. Present your final organized list directly, without any explanation or commentary. Start with the first second-level header and continue until all links are categorized.
 
 Your response should look like this:
 
@@ -47,3 +42,5 @@ Your response should look like this:
 - [Link 4 text](URL4)
 
 ...and so on, until all unique links are categorized.
+
+Begin organizing the links now, starting with the first second-level header.
